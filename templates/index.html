@@ -6,9 +6,27 @@
 </head>
 
 <body>
-<form method = "get">
+<form method = "get" action = "/index">
 <input type = "text" name="q" id="q" value="">
 <input type = "submit">
+<p><p>
+{% block content %}
+{% if data|length > 1 %}
+{% for i in data %}
+
+<h2><a href = "?q={{i.name}}">{{i.name}}</a></h2><h3>{{i.imdb_score}}
+<br>
+{% endfor %}
+{% endif %}
+{% if data|length = 1 %}
+{% for i in data %}
+{{i.name}}<br>
+imdb score:{{i.imdb_score}}<br>
+popularity:{{i.popularity}}<br>
+director:{{i.director}}
+{% endfor %}
+{% endif %}
+{% endblock %}
 </form>
 </body>
 </html>

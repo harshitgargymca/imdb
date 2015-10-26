@@ -11,6 +11,7 @@ class MovieViewset(viewsets.ViewSet):
 	def list(self,request):
 		queryset = Movie.objects.all()
 		#queryset = self.get_queryset()
+		print "cool"
 		serializer_data = self.serializer_class(queryset, many=True)
 		return Response(serializer_data.data)
 
@@ -24,6 +25,20 @@ class MovieViewset(viewsets.ViewSet):
 
 			
 			return Response(serializer_data.data)
+
+	def retrieve(self, request, *args):
+		x= request.query_params.get('pk')
+		print x
+		query = Movie.objects.filter(name__icontains = x)
+		serializer_data = self.serializer_class(query,many=True)
+		return Response(serializer_data.data)
+
+
+
+
+
+
+
 
 
 
