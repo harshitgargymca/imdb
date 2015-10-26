@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Imdb-Movie rating</title>
+</head>
+<body> 
+<form method = 'post' action = 'login/'>
+{% csrf_token %}
+<h2>Login</h2>
+<label for = "username">Username</label>
+<input type = "text" name = "username" id = "username" value ="" >
+<label for = "password">Password</label>
+<input type = "password" name = "password" id = "password" value = "">
+<input type = "submit" name = "submit" value = "Login">
+</form>
+<h2>Register</h2>
+<form method="post" action="register/">
+{% csrf_token %}
+<label for = "username_register">Username:</label>
+<input type = "text" name = "username_register" id = "username_register" value ="" >
+<label for = "password1">Password:</label>
+<input type = "password" name = "password1" id = "password1" value = "">
+<label for = "confirm_password">Confirm Password:</label>
+<input type = "password" name = "confirm_password" id = "confirm_password" value ="">
+<input type = "submit" name = "submit2" value = "Login">
+</form>
+
+</body>
+
+</html>

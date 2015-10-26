@@ -1,0 +1,25 @@
+[{
+    "popularity": 76.0,
+    "director": "Michael OHerlihy",
+    "genre": [
+      "Crime",
+      " Drama",
+      " Mystery"
+    ],
+    "imdb_score": 7.6,
+    "name": "Hawaii Five-O"
+  },
+  {
+    "popularity": 66.0,
+    "director": "Dennis Donnelly",
+    "genre": [
+      "Action",
+      " Adventure",
+      " Crime",
+      " Drama",
+      " Mystery"
+    ],
+    "imdb_score": 6.6,
+    "name": "Charlies Angels"
+  }
+]
