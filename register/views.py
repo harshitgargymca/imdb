@@ -17,8 +17,7 @@ def BaseLoginview(request):
 # Create your views here.
 
 def my_view(request):
-	if request.user.is_authenticated:
-		return HttpResponseRedirect('/profile')
+	
 	username = request.POST.get('username')
 	password = request.POST.get('password')
 
@@ -31,6 +30,7 @@ def my_view(request):
 			return render_to_response('profile.html',context, context_instance=RequestContext(request))
 
 	else:
+		print "else"
 		return HttpResponseRedirect('/')
 
 def registerview(request):
@@ -50,7 +50,7 @@ def logout_user(request):
 	logout(request)
 	return HttpResponseRedirect('/')
 
-#@login_required
+@login_required()
 def profileview(request):
 	context = {}
 	return render_to_response('profile.html',context, context_instance=RequestContext(request))
