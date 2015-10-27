@@ -8,6 +8,14 @@ class MovieViewset(viewsets.ViewSet):
 	
 	serializer_class = MovieSerializer
 
+	def get_permissions(self):
+		if self.request.method in permissions.SAFE_METHODS:
+			return (permissions.AllowAny(),)
+		if self.request.method == "POST":
+			return (permissions.IsAdminUser(),)
+		return (permissions.IsAuthenticated(),)
+
+
 	def list(self,request):
 		queryset = Movie.objects.all()
 		#queryset = self.get_queryset()

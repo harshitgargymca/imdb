@@ -3,7 +3,7 @@ from django.contrib import admin
 from movies.api_movies.views import MovieViewset
 from rest_framework import routers
 
-movie_list = MovieViewset.as_view({'get': 'list'})
+movie_list = MovieViewset.as_view({'post':'create'})
 movie_detail = MovieViewset.as_view({'get': 'retrieve'})
 router = routers.DefaultRouter()
 router.register(r'movies', MovieViewset,"basename")
